@@ -3,7 +3,9 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
-
+    <meta-data android:name="com.snapchat.kit.sdk.clientId" android:value="5ad0f46f-382c-4bc0-aa8d-c7b32102ab06" />
+   <meta-data android:name="com.snapchat.kit.sdk.redirectUrl" android:value="zambeel://zambeel/login" />
+   <meta-data android:name="com.snapchat.kit.sdk.scopes" android:resource="@array/snap_connect_scopes" /> <!-- This should be a string array of scopes !-->
     <application
       android:name=".MainApplication"
       android:label="@string/app_name"
@@ -18,8 +20,25 @@
         <intent-filter>
             <action android:name="android.intent.action.MAIN" />
             <category android:name="android.intent.category.LAUNCHER" />
+	    <data android:scheme="zambeel" android:host="zambeel" />
         </intent-filter>
       </activity>
+      <activity
+       android:name="com.snapchat.kit.sdk.SnapKitActivity"
+       android:launchMode="singleTask"
+       >
+       <intent-filter>
+           <action android:name="android.intent.action.VIEW" />
+           <category android:name="android.intent.category.DEFAULT" />
+           <category android:name="android.intent.category.BROWSABLE" />
+           <data
+               android:scheme="zambeel"
+               android:host="zambeel"
+               android:path="login"
+               />
+       </intent-filter>
+
+   </activity>
       <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
     </application>
 
