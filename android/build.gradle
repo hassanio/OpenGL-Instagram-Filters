@@ -1,5 +1,14 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
-
+subprojects {
+    afterEvaluate {
+        project -> if (project.hasProperty("android")) {
+            android {
+                compileSdkVersion 26
+                buildToolsVersion '26.0.2'
+            }
+        }
+    }
+}
 buildscript {
     repositories {
         jcenter()
@@ -20,6 +29,8 @@ allprojects {
         maven {
             // All of React Native (JS, Obj-C sources, Android binaries) is installed from npm
             url "$rootDir/../node_modules/react-native/android"
+        }
+        maven {
             url "https://storage.googleapis.com/snap-kit-build/maven"
         }
     }
