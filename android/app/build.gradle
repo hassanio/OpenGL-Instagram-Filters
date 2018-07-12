@@ -142,8 +142,8 @@ dependencies {
     compile "com.facebook.react:react-native:+"  // From node_modules
     compile project(':Reactshit')
     implementation([
-           'com.snapchat.kit.sdk:login:10.34.0.0',
-           'com.snapchat.kit.sdk:core:10.34.0.0'
+           'com.snapchat.kit.sdk:login:1.0.2',
+           'com.snapchat.kit.sdk:core:1.0.2'
    ])
 }
 
