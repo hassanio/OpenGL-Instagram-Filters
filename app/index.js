@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import EStyleSheet from 'react-native-extended-stylesheet'
 import Navigator from './config/routes'
 import Options from './screens/Options'
-
+import {Alert} from 'react-native';
 import Reactshit from 'Reactshit'
+import RNReactNativeSnapkit from 'react-native-snapkit';
 
 
 
@@ -17,7 +18,10 @@ EStyleSheet.build({
 
 class HelloWorldApp extends Component {
 	componentDidMount(){
+        console.log(Reactshit);
+        console.log(RNReactNativeSnapkit);
 		Reactshit.show('Reactshit runs fine', Reactshit.LONG);
+        RNReactNativeSnapkit.onClick();
 	}
 	render(){
    		return (

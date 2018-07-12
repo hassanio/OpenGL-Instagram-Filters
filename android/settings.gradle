@@ -1,5 +1,9 @@
 include ':Reactshit'
 project(':Reactshit').projectDir = new File(settingsDir, '../node_modules/Reactshit/android')
+
+include ':react-native-snapkit'
+project(':react-native-snapkit').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-snapkit/android')
+
 rootProject.name = 'ReactProj'
 
 include ':app'

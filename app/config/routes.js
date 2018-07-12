@@ -5,7 +5,7 @@ import Options from '../screens/Options'
 const Navigator=StackNavigator({
 	home: {
 		screen: Home,
-        path:'login',
+        path:'login/:user',
 	},
 	options: {
 		screen: Options,
