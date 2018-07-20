@@ -11,10 +11,9 @@
       android:theme="@style/AppTheme">
 
       <meta-data android:name="com.snapchat.kit.sdk.clientId" android:value="03810579-cf24-419f-be49-e3714319c53f" />
-      <!--
+      
       <meta-data android:name="com.snapchat.kit.sdk.redirectUrl" android:value="zambeel://zambeel/login" />
       <meta-data android:name="com.snapchat.kit.sdk.scopes" android:resource="@array/snap_connect_scopes" /> 
-      !-->
       <!-- This should be a string array of scopes !-->
 
 
