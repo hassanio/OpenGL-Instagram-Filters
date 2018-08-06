@@ -38,6 +38,7 @@
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */; };
 		C5E4A0C1B7D0483EA7C2F205 /* libRNReactNativeSnapkit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F59F6A8107724E00A97319DE /* libRNReactNativeSnapkit.a */; };
+		167FDECD04BA42F0968E8E60 /* libRNWebGL.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D9D89206095E4EFF8B6E6EBA /* libRNWebGL.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -345,6 +346,8 @@
 		ADBDB91F1DFEBF0600ED6528 /* RCTBlob.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTBlob.xcodeproj; path = "../node_modules/react-native/Libraries/Blob/RCTBlob.xcodeproj"; sourceTree = "<group>"; };
 		989C0EFD1D0C4BA4B753782D /* RNReactNativeSnapkit.xcodeproj */ = {isa = PBXFileReference; name = "RNReactNativeSnapkit.xcodeproj"; path = "../node_modules/react-native-snapkit/ios/RNReactNativeSnapkit.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
 		F59F6A8107724E00A97319DE /* libRNReactNativeSnapkit.a */ = {isa = PBXFileReference; name = "libRNReactNativeSnapkit.a"; path = "libRNReactNativeSnapkit.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		33162456FF35453B902F2ECF /* RNWebGL.xcodeproj */ = {isa = PBXFileReference; name = "RNWebGL.xcodeproj"; path = "../node_modules/react-native-webgl/ios/RNWebGL.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		D9D89206095E4EFF8B6E6EBA /* libRNWebGL.a */ = {isa = PBXFileReference; name = "libRNWebGL.a"; path = "libRNWebGL.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -374,6 +377,7 @@
 				00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */,
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
 				C5E4A0C1B7D0483EA7C2F205 /* libRNReactNativeSnapkit.a in Frameworks */,
+				167FDECD04BA42F0968E8E60 /* libRNWebGL.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -561,6 +565,7 @@
 				00C302DF1ABCB9EE00DB3ED1 /* RCTVibration.xcodeproj */,
 				139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */,
 				989C0EFD1D0C4BA4B753782D /* RNReactNativeSnapkit.xcodeproj */,
+				33162456FF35453B902F2ECF /* RNWebGL.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -1188,10 +1193,12 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-snapkit/ios",
+					"$(SRCROOT)/../node_modules/react-native-webgl/**",
 				);
 			};
 			name = Debug;
@@ -1213,10 +1220,12 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-snapkit/ios",
+					"$(SRCROOT)/../node_modules/react-native-webgl/**",
 				);
 			};
 			name = Release;
@@ -1239,6 +1248,7 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-snapkit/ios",
+					"$(SRCROOT)/../node_modules/react-native-webgl/**",
 				);
 			};
 			name = Debug;
@@ -1260,6 +1270,7 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-snapkit/ios",
+					"$(SRCROOT)/../node_modules/react-native-webgl/**",
 				);
 			};
 			name = Release;
@@ -1290,10 +1301,12 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-snapkit/ios",
+					"$(SRCROOT)/../node_modules/react-native-webgl/**",
 				);
 			};
 			name = Debug;
@@ -1324,10 +1337,12 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-snapkit/ios",
+					"$(SRCROOT)/../node_modules/react-native-webgl/**",
 				);
 			};
 			name = Release;
@@ -1357,10 +1372,12 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-snapkit/ios",
+					"$(SRCROOT)/../node_modules/react-native-webgl/**",
 				);
 			};
 			name = Debug;
@@ -1390,10 +1407,12 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-snapkit/ios",
+					"$(SRCROOT)/../node_modules/react-native-webgl/**",
 				);
 			};
 			name = Release;

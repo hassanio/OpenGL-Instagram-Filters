@@ -62,9 +62,9 @@ class Home extends Component {
   handlePressQuoteCurrency = () => {
 
     // console.log(RNReactNativeSnapkit.isUserLoggedIn());
-    // this.props.navigation.navigate('options')
-    console.log('NKDEKND')
-    RNReactNativeSnapkit.isUserLoggedIn().then((msg) => Reactshit.show(msg,Reactshit.LONG)).catch(err => Reactshit.show("Fail",Reactshit.LONG))
+    this.props.navigation.navigate('options')
+    // console.log('NKDEKND')
+    //RNReactNativeSnapkit.isUserLoggedIn().then((msg) => Reactshit.show(msg,Reactshit.LONG)).catch(err => Reactshit.show("Fail",Reactshit.LONG))
   };
   handlePressChangedCurrency = () => { 
     console.log("KEEEEEEEEEEEEEE")

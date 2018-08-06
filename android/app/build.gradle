@@ -101,6 +101,7 @@ android {
         applicationId "com.reactproj"
         minSdkVersion 19
         targetSdkVersion 22
+        multiDexEnabled true
         versionCode 1
         versionName "1.0"
         ndk {
@@ -137,6 +138,16 @@ android {
 }
 
 dependencies {
+    compile project(':react-native-webgl')
+    compile (project(':react-native-camera')) {
+    exclude group: "com.google.android.gms"
+    compile 'com.android.support:exifinterface:25.+'
+    compile ('com.google.android.gms:play-services-vision:12.0.1') {
+        force = true
+    }
+}
+	compile project(':RNGL')
+    compile 'com.android.support:multidex:1.0.3'
     compile project(':react-native-snapkit')
     compile fileTree(dir: "libs", include: ["*.jar"])
     compile "com.android.support:appcompat-v7:26.0.2"
@@ -154,3 +165,5 @@ task copyDownloadableDepsToLibs(type: Copy) {
     from configurations.compile
     into 'libs'
 }
+
+

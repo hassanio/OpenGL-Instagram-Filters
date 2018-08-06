@@ -6,6 +6,7 @@ import { Container } from '../components/Container';
 import RNReactNativeSnapkit from "react-native-snapkit";
 import { DeviceEventEmitter } from 'react-native';
 import Reactshit from "Reactshit"
+import { Cam } from '../components/Camera'
 
 console.disableYellowBox = true
 
@@ -17,7 +18,7 @@ class Options extends Component {
 			<Container>
 				<StatusBar backgroundColor="grey" barStyle="light-content" />
 				<View>
-					<Text> Login Successfull </Text>
+					<Cam navigation={this.props.navigation}/>
 				</View>
 			</Container>
 			)

@@ -16,6 +16,7 @@ buildscript {
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.1.2'
+        classpath 'de.undercouch:gradle-download-task:3.1.2'
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
@@ -32,6 +33,18 @@ allprojects {
         }
         maven {
             url "https://storage.googleapis.com/snap-kit-build/maven"
+        }
+        maven { url "https://jitpack.io" }
+        maven { url "https://maven.google.com" }
+    }
+}
+subprojects {
+    project.configurations.all {
+        resolutionStrategy.eachDependency { details ->
+            if (details.requested.group == 'com.android.support'
+                    && !details.requested.name.contains('multidex') ) {
+                details.useVersion "27.1.0"
+            }
         }
     }
 }
