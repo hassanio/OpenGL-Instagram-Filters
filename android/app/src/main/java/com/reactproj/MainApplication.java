@@ -13,7 +13,7 @@ import com.facebook.react.shell.MainReactPackage;
 import com.facebook.soloader.SoLoader;
 import org.reactnative.camera.RNCameraPackage;
 import android.support.multidex.MultiDex;
-import com.projectseptember.RNGL.RNGLPackage;
+
 
 import java.util.Arrays;
 import java.util.List;
@@ -36,7 +36,6 @@ public class MainApplication extends Application implements ReactApplication {
             new RNWebGLPackage(),
           new RNReactNativeSnapkitPackage(),
           new RNCameraPackage(),
-          new RNGLPackage(),
           new Package()
       );
     }

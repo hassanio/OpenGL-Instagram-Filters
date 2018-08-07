@@ -146,7 +146,7 @@ dependencies {
         force = true
     }
 }
-	compile project(':RNGL')
+	
     compile 'com.android.support:multidex:1.0.3'
     compile project(':react-native-snapkit')
     compile fileTree(dir: "libs", include: ["*.jar"])

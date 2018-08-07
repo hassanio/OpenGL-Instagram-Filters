@@ -1,9 +1,9 @@
-import GL from 'gl-react'
-import React from 'react'
+import {Shaders,Node} from 'gl-react'
+import React,{Component} from 'react'
 import PropTypes from 'prop-types'
 
 
-const shaders = GL.Shaders.create({
+const shaders = Shaders.create({
   Brannan: {
     frag: `
       precision highp float;
@@ -82,25 +82,19 @@ const shaders = GL.Shaders.create({
   }
 });
 
-module.exports = GL.createComponent(
-  ({ children: inputImageTexture }) => {
-    console.log(inputImageTexture);
-    return <GL.Node
+export default class Brannan extends Component{
+  render(){
+    inputImageTexture = this.props.children;
+    return <Node
       shader={shaders.Brannan}
       uniforms={{ 
         inputImageTexture,
-        //inputImageTexture2: 'https://raw.githubusercontent.com/stoffern/gl-react-instagramfilters/master/resources/brannanProcess.png',
-        //inputImageTexture3: 'https://raw.githubusercontent.com/stoffern/gl-react-instagramfilters/master/resources/brannanBlowout.png',
-        //inputImageTexture4: 'https://raw.githubusercontent.com/stoffern/gl-react-instagramfilters/master/resources/brannanContrast.png',
-        //inputImageTexture5: 'https://raw.githubusercontent.com/stoffern/gl-react-instagramfilters/master/resources/brannanLuma.png',
-        //inputImageTexture6: 'https://raw.githubusercontent.com/stoffern/gl-react-instagramfilters/master/resources/brannanScreen.png'
+        inputImageTexture2: 'https://raw.githubusercontent.com/stoffern/gl-react-instagramfilters/master/resources/brannanProcess.png',
+        inputImageTexture3: 'https://raw.githubusercontent.com/stoffern/gl-react-instagramfilters/master/resources/brannanBlowout.png',
+        inputImageTexture4: 'https://raw.githubusercontent.com/stoffern/gl-react-instagramfilters/master/resources/brannanContrast.png',
+        inputImageTexture5: 'https://raw.githubusercontent.com/stoffern/gl-react-instagramfilters/master/resources/brannanLuma.png',
+        inputImageTexture6: 'https://raw.githubusercontent.com/stoffern/gl-react-instagramfilters/master/resources/brannanScreen.png'
       }}
     />
-  },
-  {
-    displayName: "Brannan",
-    propTypes: {
-      children: PropTypes.any.isRequired,
-    }
   }
-);
+};

@@ -12,20 +12,15 @@ import GLImage from 'gl-react-image';
 class Filter extends Component {
 	render() {
 		return (
-			<Container>
-				<StatusBar backgroundColor="grey" barStyle="light-content" />
-				<View>
-					<Surface height={Dimensions.get('window').width} width={Dimensions.get('window').height}>
-  						<Brannan>
-    						<Image 
-    							style={{width: Dimensions.get('window').width, height: Dimensions.get('window').height}}
-      							source = {{uri: "http://i.imgur.com/tCatS2c.jpg"}}
+					<Surface backgroundColor='red' style = {{width: Dimensions.get('window').width, height: Dimensions.get('window').height}}>
+  						{/*<Brannan />
+    						<Image style = {{width: Dimensions.get('window').width, height: Dimensions.get('window').height}}
+      							source = {{uri: this.props.navigation.state.params.image}}
       							resizeMode="contain"
     						/>
   						</Brannan>
+  						<HelloGL />*/}
 					</Surface>
-				</View>
-			</Container>
 			)
 	}
 }
