@@ -1,5 +1,6 @@
 import GL from 'gl-react'
-import React,{PropTypes} from 'react'
+import React from 'react'
+import resolveAssetSource from 'react-native/Libraries/Image/resolveAssetSource'
 
 const shaders = GL.Shaders.create({
   Inkwell: {
@@ -24,16 +25,13 @@ module.exports = GL.createComponent(
   ({ children: inputImageTexture }) => {
     return <GL.Node
       shader={shaders.Inkwell}
-      uniforms={{ 
+      uniforms={{
         inputImageTexture,
-        inputImageTexture2: 'https://raw.githubusercontent.com/stoffern/gl-react-instagramfilters/master/resources/inkwellMap.png',
+        inputImageTexture2: resolveAssetSource(require('../resources/inkwellMap.png')),
       }}
     />
   },
   {
-    displayName: "Inkwell",
-    propTypes: {
-      children: PropTypes.any.isRequired,
-    }
+    displayName: "Inkwell"
   }
 );

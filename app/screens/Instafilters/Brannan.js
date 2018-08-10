@@ -1,11 +1,10 @@
-import {Shaders,Node} from 'gl-react'
+import {Node,Shaders,GLSL} from 'gl-react'
 import React,{Component} from 'react'
-import PropTypes from 'prop-types'
-
+import resolveAssetSource from 'react-native/Libraries/Image/resolveAssetSource'
 
 const shaders = Shaders.create({
   Brannan: {
-    frag: `
+    frag: GLSL`
       precision highp float;
       varying vec2 uv;
 
@@ -30,7 +29,7 @@ const shaders = Shaders.create({
       vec3 luma = vec3(.3, .59, .11);
 
       void main () {
-     
+
         vec3 texel = texture2D(inputImageTexture, uv).rgb;
 
         vec2 lookup;
@@ -82,19 +81,21 @@ const shaders = Shaders.create({
   }
 });
 
-export default class Brannan extends Component{
-  render(){
+export default class Brannan extends Component {
+  render() {
     inputImageTexture = this.props.children;
     return <Node
       shader={shaders.Brannan}
-      uniforms={{ 
+      uniforms={{
         inputImageTexture,
-        inputImageTexture2: 'https://raw.githubusercontent.com/stoffern/gl-react-instagramfilters/master/resources/brannanProcess.png',
-        inputImageTexture3: 'https://raw.githubusercontent.com/stoffern/gl-react-instagramfilters/master/resources/brannanBlowout.png',
-        inputImageTexture4: 'https://raw.githubusercontent.com/stoffern/gl-react-instagramfilters/master/resources/brannanContrast.png',
-        inputImageTexture5: 'https://raw.githubusercontent.com/stoffern/gl-react-instagramfilters/master/resources/brannanLuma.png',
-        inputImageTexture6: 'https://raw.githubusercontent.com/stoffern/gl-react-instagramfilters/master/resources/brannanScreen.png'
+        inputImageTexture2: resolveAssetSource(require('../resources/brannanProcess.png')),
+        inputImageTexture3: resolveAssetSource(require('../resources/brannanBlowout.png')),
+        inputImageTexture4: resolveAssetSource(require('../resources/brannanContrast.png')),
+        inputImageTexture5: resolveAssetSource(require('../resources/brannanLuma.png')),
+        inputImageTexture6: resolveAssetSource(require('../resources/brannanScreen.png'))
       }}
     />
   }
-};
+    
+}
+

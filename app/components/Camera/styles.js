@@ -17,11 +17,17 @@ export default EStyleSheet.create({
   },
   capture: {
     flex: 0,
-    backgroundColor: '#fff',
-    borderRadius: 5,
     padding: 15,
     paddingHorizontal: 20,
     alignSelf: 'center',
-    margin: 20
+    margin: 20,
+    borderWidth:8,
+    borderColor:'rgba(0,0,0,0.5)',
+    alignItems:'center',
+    justifyContent:'center',
+    width:75,
+    height:75,
+    backgroundColor:'#fff',
+    borderRadius:75,
   }
 });

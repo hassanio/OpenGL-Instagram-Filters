@@ -1,11 +1,8 @@
-const GL = require("gl-react");
-const React = require("react");
-/*
-const {
-  PropTypes
-} = React;
-*/
-const shaders = GL.Shaders.create({
+import {Node,Shaders,GLSL} from 'gl-react'
+import React,{Component} from 'react'
+import resolveAssetSource from 'react-native/Libraries/Image/resolveAssetSource'
+
+const shaders = Shaders.create({
   Amaro: {
     frag: `
       precision highp float;
@@ -17,7 +14,7 @@ const shaders = GL.Shaders.create({
       uniform sampler2D inputImageTexture4;
 
       void main () {
-     
+
         vec4 texel = texture2D(inputImageTexture, uv);
         vec3 bbTexel = texture2D(inputImageTexture2, uv).rgb;
 
@@ -37,19 +34,19 @@ const shaders = GL.Shaders.create({
   }
 });
 
-module.exports = GL.createComponent(
-  ({ children: inputImageTexture }) => {
-    return <GL.Node
+export default class Amaro extends Component {
+  render() {
+    inputImageTexture = this.props.children;
+    return <Node
       shader={shaders.Amaro}
-      uniforms={{ 
+      uniforms={{
         inputImageTexture,
-        inputImageTexture2: 'https://raw.githubusercontent.com/stoffern/gl-react-instagramfilters/master/resources/blackboard1024.png',
-        inputImageTexture3: 'https://raw.githubusercontent.com/stoffern/gl-react-instagramfilters/master/resources/overlayMap.png',
-        inputImageTexture4: 'https://raw.githubusercontent.com/stoffern/gl-react-instagramfilters/master/resources/amaroMap.png',
+        inputImageTexture2: resolveAssetSource(require('../resources/blackboard1024.png')),
+        inputImageTexture3: resolveAssetSource(require('../resources/overlayMap.png')),
+        inputImageTexture4: resolveAssetSource(require('../resources/amaroMap.png')),
       }}
     />
-  },
-  {
-    displayName: "Amaro",
   }
-);
+    
+}
+

@@ -1,5 +1,6 @@
 import GL from 'gl-react'
-import React,{PropTypes} from 'react'
+import React from 'react'
+import resolveAssetSource from 'react-native/Libraries/Image/resolveAssetSource'
 
 const shaders = GL.Shaders.create({
   Lokofi: {
@@ -39,17 +40,14 @@ module.exports = GL.createComponent(
   ({ children: inputImageTexture }) => {
     return <GL.Node
       shader={shaders.Lokofi}
-      uniforms={{ 
+      uniforms={{
         inputImageTexture,
-        inputImageTexture2: 'https://raw.githubusercontent.com/stoffern/gl-react-instagramfilters/master/resources/lomoMap.png',
-        inputImageTexture3: 'https://raw.githubusercontent.com/stoffern/gl-react-instagramfilters/master/resources/vignetteMap.png',
+        inputImageTexture2: resolveAssetSource(require('../resources/lomoMap.png')),
+        inputImageTexture3: resolveAssetSource(require('../resources/vignetteMap.png')),
       }}
     />
   },
   {
-    displayName: "Lokofi",
-    propTypes: {
-      children: PropTypes.any.isRequired,
-    }
+    displayName: "Lokofi"
   }
 );

@@ -1,9 +1,6 @@
-const GL = require("gl-react");
-const React = require("react");
-
-const {
-  PropTypes
-} = React;
+import GL from 'gl-react'
+import React from 'react'
+import resolveAssetSource from 'react-native/Libraries/Image/resolveAssetSource'
 
 const shaders = GL.Shaders.create({
   F1977: {
@@ -15,7 +12,7 @@ const shaders = GL.Shaders.create({
       uniform sampler2D inputImageTexture2;
 
       void main () {
-     
+
         vec3 texel = texture2D(inputImageTexture, uv).rgb;
 
         texel = vec3(
@@ -33,16 +30,13 @@ module.exports = GL.createComponent(
   ({ children: inputImageTexture }) => {
     return <GL.Node
       shader={shaders.F1977}
-      uniforms={{ 
+      uniforms={{
         inputImageTexture,
-        inputImageTexture2: 'https://raw.githubusercontent.com/stoffern/gl-react-instagramfilters/master/resources/1977map.png' 
+        inputImageTexture2: resolveAssetSource(require('../resources/1977map.png'))
       }}
     />
   },
   {
-    displayName: "F1977",
-    propTypes: {
-      children: PropTypes.any.isRequired,
-    }
+    displayName: "F1977"
   }
 );

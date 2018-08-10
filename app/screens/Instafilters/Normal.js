@@ -1,5 +1,6 @@
 import GL from 'gl-react'
-import React,{PropTypes} from 'react'
+import React from 'react'
+import resolveAssetSource from 'react-native/Libraries/Image/resolveAssetSource'
 
 const shaders = GL.Shaders.create({
   Normal: {
@@ -21,15 +22,12 @@ module.exports = GL.createComponent(
   ({ children: inputImageTexture }) => {
     return <GL.Node
       shader={shaders.Normal}
-      uniforms={{ 
+      uniforms={{
         inputImageTexture,
       }}
     />
   },
   {
-    displayName: "Normal",
-    propTypes: {
-      children: PropTypes.any.isRequired,
-    }
+    displayName: "Normal"
   }
 );
