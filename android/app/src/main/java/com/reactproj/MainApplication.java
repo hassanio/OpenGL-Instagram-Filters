@@ -4,6 +4,13 @@ package com.reactproj;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+<<<<<<< Updated upstream
+=======
+import com.dylanvann.fastimage.FastImageViewPackage;
+import org.reactnative.camera.RNCameraPackage;
+import fr.greweb.rnwebgl.RNWebGLPackage;
+import com.paitoo.RNReactNativeSnapkitPackage;
+>>>>>>> Stashed changes
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
@@ -27,7 +34,15 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+<<<<<<< Updated upstream
           new Package() 
+=======
+           new FastImageViewPackage(),
+           new RNCameraPackage(),
+           new RNWebGLPackage(),
+          new RNReactNativeSnapkitPackage(),
+          new Package()
+>>>>>>> Stashed changes
       );
     }
 

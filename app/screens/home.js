@@ -30,8 +30,15 @@ class Home extends Component {
     console.log('press base currency');
   };
 
+<<<<<<< Updated upstream
   handlePressQuoteCurrency = () => {
     this.props.navigation.navigate('options')
+=======
+    // console.log(RNReactNativeSnapkit.isUserLoggedIn());
+    this.props.navigation.navigate('filter')
+    // console.log('NKDEKND')
+    //RNReactNativeSnapkit.isUserLoggedIn().then((msg) => Reactshit.show(msg,Reactshit.LONG)).catch(err => Reactshit.show("Fail",Reactshit.LONG))
+>>>>>>> Stashed changes
   };
 
   render() {
